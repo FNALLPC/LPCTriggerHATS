@@ -26,13 +26,12 @@ We will first run this exercise on MiniAOD format, then run it again on NanoAOD.
 > The MINIAOD format was introduced at the beginning of Run 2 to reduce the information and file size from the AOD file format. 
 > For Run 2 analyses, most of the analysis groups at CMS skimmed the centrally produced MiniAOD files into smaller, analysis-specific ROOT Ntuples. 
 > This means that several redundant versions of Ntuples for different analysis groups are stored in the limited CMS storage spaces.
->
->{: .solution}
+{: .solution}
 
 > ## NanoAOD
 > A centrally maintained NanoAOD format was proposed in 2018, aiming for a common Ntuple format that can be used by most of the CMS analysis groups. 
 > Information about the NanoAOD format can be found [here](https://cms-nanoaod-integration.web.cern.ch/integration/master-102X/mc102X_doc.html#HLT). 
->{: .solution}
+{: .solution}
 
 {% include links.md %}
 
