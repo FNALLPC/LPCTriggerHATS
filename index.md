@@ -11,14 +11,14 @@ FIXME: home page introduction
 
 > ## Links
 > * [Trigger HATS@LPC 2024](https://indico.cern.ch/event/1443889/)
-> * [Github repo](https://github.com/kakwok/LPCTriggerHATS)
+> * [LPCTriggerHATS github repo](https://github.com/kakwok/LPCTriggerHATS)
 > * [Twiki page(old)](https://twiki.cern.ch/twiki/bin/viewauth/CMS/SWGuideCMSDataAnalysisSchoolLPC2023TriggerExercise)
 > * [HATS introductory slides 2024](https://indico.cern.ch/event/1443871/attachments/2906926/5099492/General%20HATS@LPC%202024%20Introductory%20Remarks.pdf)
 {: .callout}
 
 > ## Prerequisites
 > 1. CERN lxplus account:[link](https://uscms.org/uscms_at_work/physics/computing/getstarted/index.shtml#GetCERNAcct) 
-> 2. CMS personal grid certificate::[link](https://uscms.org/uscms_at_work/physics/computing/getstarted/get_grid_cert.shtml) 
+> 2. CMS personal grid certificate:[link](https://uscms.org/uscms_at_work/physics/computing/getstarted/get_grid_cert.shtml) 
 {: .prereq}
 
 ### Goal of this exercise
@@ -31,8 +31,6 @@ This exercise will introduce you to the CMS trigger system and, in particular, t
  * You will be familiar with the analysis tools needed to access trigger-related information in CMS datasets
  * You will know how to perform trigger efficiency measurements
 
-{% include links.md %}
-
 ### Support
 
  * Dedicated HATS 2024 [Mattermost channel](https://mattermost.web.cern.ch/cms-exp/channels/hatslpc-2024) for live support during the tutorial 
@@ -43,3 +41,6 @@ This exercise will introduce you to the CMS trigger system and, in particular, t
 * Martin Kwok (FNAL)
 * Abdollah Mohammadi (UW-Madison)
 * Daniel Diaz (UCSD)
+* Dener De Souza Lemos
+
+{% include links.md %}
