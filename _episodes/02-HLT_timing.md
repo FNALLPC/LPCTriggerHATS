@@ -139,9 +139,5 @@ python3 ./timing/job_manager.py
 - [Timing studies twiki](https://twiki.cern.ch/twiki/bin/viewauth/CMS/TriggerStudiesTiming)
 - [Timing reports twiki](https://twiki.cern.ch/twiki/bin/viewauth/CMS/HLTCpuTimingReports2023)
 
-~~~
-{: .language-bash}
 
-
-{% include links.md %}
 
