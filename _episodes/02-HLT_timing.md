@@ -30,8 +30,7 @@ A CERN account with access to lxplus - that's it!
 
 There is a possibility to require ```pip3 install tsgauth==0.10.2```
 To fix that, use
-
-    ```
+    ```bash
     python3 -m venv venv
     source venv/bin/activate
     pip3 install --upgrade pip
@@ -74,7 +73,6 @@ NOTE: It is currently not possible to cancel an already running job. Only queued
 - the final `cmsRun` of the timing job
 
 **NOTE:** All of these steps are taken care of by the server for you as a user and the reports are just helpful tools when occasionally some measurement is crashing.
-
     ```bash
     python3 job_manager.py --report JOB_ID
     ```
