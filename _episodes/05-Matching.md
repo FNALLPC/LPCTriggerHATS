@@ -15,9 +15,9 @@ Offline objects are reconstructed offline, which in general has more precise rec
 If we want to know whether an offline object(e.g. a muon) is responsible for firing the HLT, we can look for a trigger muon within a certain `dR` of the offline muon.
 
 ### Collection names 
-We can learn from the example in the `analyze` function in `SingleMuTrigAnalyzerMiniAOD.cc.` 
-The offline objects are reconstructed primary vertices (offlineSlimmedPrimaryVertices) and offline-reconstructed muons (slimmedMuons). 
-The trigger object is `trigMuons`, which we obtained from the `TriggerObjectStandAloneCollection` from last episode. 
+We can learn from the example in the `analyze` function in `SingleMuTrigAnalyzerMiniAOD.cc.`<br>
+The offline objects are reconstructed primary vertices (offlineSlimmedPrimaryVertices) and offline-reconstructed muons (slimmedMuons).<br>
+The trigger object is `trigMuons`, which we obtained from the `TriggerObjectStandAloneCollection` from last episode.<br>
 Here we are not interested in primary vertices per se, we just need to get them because later we will use them in identification of "tight" muons.
 
 ### Matcing by momentum direction `dR`

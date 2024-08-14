@@ -35,7 +35,7 @@ objectives:
 > ~~~
 > The trigger objects has an `id` attribute so that you can easily find same type of trigger objects (e.g. trigger muons)
 > ~~~
-> trigMuon = trig[trig.id==15]
+> trigMuon = trig[trig.id==13]
 > # ID of the object: 11 = Electron (PixelMatched e/gamma), 22 = Photon (PixelMatch-vetoed e/gamma), 13 = Muon, 15 = Tau, 1 = Jet, 6 = FatJet, 2 = MET, 3 = HT, 4 = MHT
 > # Note that id matches the pdgId of the particles
 > ~~~
@@ -62,13 +62,16 @@ objectives:
 > Therefore, if you want to find trigger muons in `Iso` paths:
 > ~~~
 > filterBit = 2
-> passIso = trigMuon.filterBits &(1<<filterBit)==(1<<filterBit) # mask for each trigMuon
+> passIso = trigMuon.filterBits &filterBit==filterBit # mask for each trigMuon
 > IsoTrigMuon = trigMuon[passIso] 
 > ~~~
 >
+> > How can you find the trigger muons in `1mu` and `Iso` paths?
+> {: .challenge}
+>
 > ### References
-> [Documentation of specific version](https://cms-nanoaod-integration.web.cern.ch/autoDoc/). 
-> [Current definitionof  trigger object in CMSSW](https://github.com/cms-sw/cmssw/blob/master/PhysicsTools/NanoAOD/python/triggerObjects_cff.py). 
+>  * [Documentation of specific version](https://cms-nanoaod-integration.web.cern.ch/autoDoc/). 
+>  * [Current definitionof  trigger object in CMSSW](https://github.com/cms-sw/cmssw/blob/master/PhysicsTools/NanoAOD/python/triggerObjects_cff.py). 
 {: .solution}
 
 {% include links.md %}
