@@ -28,8 +28,8 @@ A CERN account with access to lxplus - that's it!
     python3 submit.py /dev/CMSSW_14_0_0/GRun/V173 --cmssw CMSSW_14_0_11 --tag YOUR_TAG_HERE
     ```
 
-    There is a possibility to require ```pip3 install tsgauth==0.10.2```
-    To fix that, use
+    There is a possibility to require ```pip3 install tsgauth==0.10.2```. Which can be fixed using the lines bellow.
+   
     ```bash
     python3 -m venv venv
     source venv/bin/activate
