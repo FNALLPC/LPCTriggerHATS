@@ -22,7 +22,7 @@ A CERN account with access to lxplus - that's it!
     cd timing
     ```
 
-2. Submit a timing job to the timing machine using CMSSW_13_2_0, the GRun menu V152 and the default dataset on the timing machine.
+2. Submit a timing job to the timing machine using CMSSW_14_0_11, the GRun menu V173 and the default dataset on the timing machine.
 
     ```bash
     python3 submit.py /dev/CMSSW_14_0_0/GRun/V173 --cmssw CMSSW_14_0_11 --tag YOUR_TAG_HERE
@@ -44,6 +44,7 @@ A CERN account with access to lxplus - that's it!
     ```bash
     python3 job_manager.py
     ```
+    It takes around 20-30 minutes to run.
 
 4. Re-submit your job using the --rerun option, followed by the job ID of the first submitted job. This will re-submit the first job with the exact same parameters and can be useful if you want to re-run a job multiple times to get an idea of the variance of the timing measurements. This also leads to the program re-using the same CMSSW area as before on the timing machine, so it saves up some disk space there. Also make sure to add a new `--tag` to your job so you can distinguish the two in the job queue
 
