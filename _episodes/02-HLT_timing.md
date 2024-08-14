@@ -73,10 +73,10 @@ A CERN account with access to lxplus - that's it!
     ```
    This will download a `tar.gz` file containing output and error files for :
 
-- the creation of the CMSSW environment on the timing machine (i.e. the `scram proj`/`cmsrel` step)
-- the building of the CMSSW environment including the merging of provided pull requests etc. (i.e. the `scram b` step)
-- the benchmarking script (found in the `run_benchmark.py` file) which initializes and controls the settings of the actual timing measurements on multiple CPUs/GPUs using the [`patatrack-scripts`` repo](https://github.com/cms-patatrack/patatrack-scripts)
-- the final `cmsRun` of the timing job
+    - the creation of the CMSSW environment on the timing machine (i.e. the `scram proj`/`cmsrel` step)
+    - the building of the CMSSW environment including the merging of provided pull requests etc. (i.e. the `scram b` step)
+    - the benchmarking script (found in the `run_benchmark.py` file) which initializes and controls the settings of the actual timing measurements on multiple CPUs/GPUs using the [`patatrack-scripts`` repo](https://github.com/cms-patatrack/patatrack-scripts)
+    - the final `cmsRun` of the timing job
 
     **NOTE:** All of these steps are taken care of by the server for you as a user and the reports are just helpful tools when occasionally some measurement is crashing.
 
