@@ -66,16 +66,18 @@ A CERN account with access to lxplus - that's it!
     python3 submit.py /dev/CMSSW_14_0_0/GRun/V173 --cmssw CMSSW_14_0_11 --cpu-only --tag YOUR_CPU_JOB_TAG_HERE
     ```
 
-7. Once your jobs have finished, get the reports for one of the jobs using the `job_manager.py` script and the `--report` option. This will download a `tar.gz` file containing output and error files for :
+7. Once your jobs have finished, get the reports for one of the jobs using the `job_manager.py` script and the `--report` option.
+
+    ```bash
+    python3 job_manager.py --report JOB_ID
+    ```
+   This will download a `tar.gz` file containing output and error files for :
 
 - the creation of the CMSSW environment on the timing machine (i.e. the `scram proj`/`cmsrel` step)
 - the building of the CMSSW environment including the merging of provided pull requests etc. (i.e. the `scram b` step)
 - the benchmarking script (found in the `run_benchmark.py` file) which initializes and controls the settings of the actual timing measurements on multiple CPUs/GPUs using the [`patatrack-scripts`` repo](https://github.com/cms-patatrack/patatrack-scripts)
 - the final `cmsRun` of the timing job
 
-    ```bash
-    python3 job_manager.py --report JOB_ID
-    ```
     **NOTE:** All of these steps are taken care of by the server for you as a user and the reports are just helpful tools when occasionally some measurement is crashing.
 
 
