@@ -7,9 +7,6 @@ objectives:
 - "Reference repo: [link](https://github.com/loeschet/TimingExerciseTriggerHATS2023/blob/main/README.md)"
 ---
 
-# TimingExerciseTriggerHATS2024
-Short timing exercise for Trigger HATS@LPC 2024
-
 ## Prerequisites
 
 A CERN account with access to lxplus - that's it!
@@ -20,54 +17,54 @@ A CERN account with access to lxplus - that's it!
 
 1. Log in to lxplus and clone [the timing repository](https://gitlab.cern.ch/cms-tsg/steam/timing) somewhere (e.g. in your EOS space)
 
-```bash
-git clone https://gitlab.cern.ch/cms-tsg/steam/timing.git
-cd timing
-```
+    ```bash
+    git clone https://gitlab.cern.ch/cms-tsg/steam/timing.git
+    cd timing
+    ```
 
 2. Submit a timing job to the timing machine using CMSSW_13_2_0, the GRun menu V152 and the default dataset on the timing machine.
 
-
-```bash
-python3 submit.py /dev/CMSSW_14_0_0/GRun/V173 --cmssw CMSSW_14_0_11 --tag YOUR_TAG_HERE
-```
+    ```bash
+    python3 submit.py /dev/CMSSW_14_0_0/GRun/V173 --cmssw CMSSW_14_0_11 --tag YOUR_TAG_HERE
+    ```
 
 There is a possibility to require ```pip3 install tsgauth==0.10.2```
 To fix that, use
-```
-python3 -m venv venv
-source venv/bin/activate
-pip3 install --upgrade pip
-pip3 install tsgauth==0.10.2
-```
+
+    ```
+    python3 -m venv venv
+    source venv/bin/activate
+    pip3 install --upgrade pip
+    pip3 install tsgauth==0.10.2
+    ```
 
 If you have 2FA, the code will give you a link (like ```https://auth.cern.ch/auth/realms/cern/...```) which should be copy and pasted in the browser to grant access.
 
 3. Check the status of your job using the `job_manager.py` script.
 
-```bash
-python3 job_manager.py
-```
+    ```bash
+    python3 job_manager.py
+    ```
 
 4. Re-submit your job using the --rerun option, followed by the job ID of the first submitted job. This will re-submit the first job with the exact same parameters and can be useful if you want to re-run a job multiple times to get an idea of the variance of the timing measurements. This also leads to the program re-using the same CMSSW area as before on the timing machine, so it saves up some disk space there. Also make sure to add a new `--tag` to your job so you can distinguish the two in the job queue
 
-```bash 
-python3 submit.py --rerun JOB_ID --tag YOUR_NEW_TAG_HERE
-```
+    ```bash 
+    python3 submit.py --rerun JOB_ID --tag YOUR_NEW_TAG_HERE
+    ```
 
 5. Remove the recently added job from the queue using the `job_manager.py` script and the `--rm` option.
 
-```bash
-python3 job_manager.py --rm JOB_ID_OF_RESUBMITTED_JOB
-```
+    ```bash
+    python3 job_manager.py --rm JOB_ID_OF_RESUBMITTED_JOB
+    ```
 
 NOTE: It is currently not possible to cancel an already running job. Only queued jobs can be cancelled.
 
 6. Submit another job with the same settings as before, but now only using the CPUs by adding the `--cpu-only` option. This will run the same job, but only on the CPUs of the timing machine. This is useful to compare the performance of the CPUs and GPUs.
 
-```bash
-python3 submit.py /dev/CMSSW_14_0_0/GRun/V173 --cmssw CMSSW_14_0_11 --cpu-only --tag YOUR_CPU_JOB_TAG_HERE
-```
+    ```bash
+    python3 submit.py /dev/CMSSW_14_0_0/GRun/V173 --cmssw CMSSW_14_0_11 --cpu-only --tag YOUR_CPU_JOB_TAG_HERE
+    ```
 
 7. Once your jobs have finished, get the reports for one of the jobs using the `job_manager.py` script and the `--report` option. This will download a `tar.gz` file containing output and error files for :
 
@@ -78,9 +75,9 @@ python3 submit.py /dev/CMSSW_14_0_0/GRun/V173 --cmssw CMSSW_14_0_11 --cpu-only -
 
 **NOTE:** All of these steps are taken care of by the server for you as a user and the reports are just helpful tools when occasionally some measurement is crashing.
 
-```bash
-python3 job_manager.py --report JOB_ID
-```
+    ```bash
+    python3 job_manager.py --report JOB_ID
+    ```
 
 8. Investigate the results using the timing GUI
 
@@ -98,36 +95,36 @@ It is also possible to submit a timing job with a previously created CMSSW area.
 
 1. Create a CMSSW area on lxplus and build it using the GRun menu V173 and the default dataset on the timing machine. 
 
-```bash
-cmsrel CMSSW_14_0_11
-cd CMSSW_14_0_11/src
-cmsenv
-git cms-init
-scram build -j 4
-```
+    ```bash
+    cmsrel CMSSW_14_0_11
+    cd CMSSW_14_0_11/src
+    cmsenv
+    git cms-init
+    scram build -j 4
+    ```
 
 2. Download the same GRun menu as in Exercise 1 using the `hltGetConfiguration` command. When you do this outside this exercise, make sure you choose the correct globaltag and l1 menu for your use case. For this exercise you can copy/paste the command below.
 
-```bash
-hltGetConfiguration /dev/CMSSW_14_0_0/GRun/V173 --globaltag 140X_dataRun3_HLT_v3 --data --process TIMING --full --offline --output minimal --type GRun --max-events 20000 --era Run3 --timing --l1 L1Menu_Collisions2024_v1_3_0-d1_xml > hlt.py
-```
+    ```bash
+    hltGetConfiguration /dev/CMSSW_14_0_0/GRun/V173 --globaltag 140X_dataRun3_HLT_v3 --data --process TIMING --full --offline --output minimal --type GRun --max-events 20000 --era Run3 --timing --l1 L1Menu_Collisions2024_v1_3_0-d1_xml > hlt.py
+    ```
 3. Clone the timing repository.
 
-```bash
-git clone https://gitlab.cern.ch/cms-tsg/steam/timing.git
-```
+    ```bash
+    git clone https://gitlab.cern.ch/cms-tsg/steam/timing.git
+    ```
 
 4. Submit your config to the timing server. Many of the options that we needed in the arealess submission are not needed anymore, since they are already specified in the config.
 
-```bash
-python3 ./timing/submit.py hlt.py --tag YOUR_NEW_TAG_HERE
-```
+    ```bash
+    python3 ./timing/submit.py hlt.py --tag YOUR_NEW_TAG_HERE
+    ```
 
 5. Again you can investigate the job using the `job_manger.py` script.
 
-```bash
-python3 ./timing/job_manager.py
-```
+    ```bash
+    python3 ./timing/job_manager.py
+    ```
 
 6. Once the job is done, you can investigate the results in the timing GUI. For example, you can check if your result of the arealess submission coincides with your result of the submission with an area (a variance of about 1-3% is normal).
 
