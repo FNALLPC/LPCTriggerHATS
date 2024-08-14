@@ -28,8 +28,8 @@ A CERN account with access to lxplus - that's it!
     python3 submit.py /dev/CMSSW_14_0_0/GRun/V173 --cmssw CMSSW_14_0_11 --tag YOUR_TAG_HERE
     ```
 
-There is a possibility to require ```pip3 install tsgauth==0.10.2```
-To fix that, use
+    There is a possibility to require ```pip3 install tsgauth==0.10.2```
+    To fix that, use
     ```bash
     python3 -m venv venv
     source venv/bin/activate
@@ -72,7 +72,8 @@ NOTE: It is currently not possible to cancel an already running job. Only queued
 - the benchmarking script (found in the `run_benchmark.py` file) which initializes and controls the settings of the actual timing measurements on multiple CPUs/GPUs using the [`patatrack-scripts`` repo](https://github.com/cms-patatrack/patatrack-scripts)
 - the final `cmsRun` of the timing job
 
-**NOTE:** All of these steps are taken care of by the server for you as a user and the reports are just helpful tools when occasionally some measurement is crashing.
+    **NOTE:** All of these steps are taken care of by the server for you as a user and the reports are just helpful tools when occasionally some measurement is crashing.
+
     ```bash
     python3 job_manager.py --report JOB_ID
     ```
