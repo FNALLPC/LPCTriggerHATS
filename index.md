@@ -41,6 +41,6 @@ This exercise will introduce you to the CMS trigger system and, in particular, t
 * Martin Kwok (FNAL)
 * Abdollah Mohammadi (UW-Madison)
 * Daniel Diaz (UCSD)
-* Dener De Souza Lemos
+* Dener De Souza Lemos (UIC)
 
 {% include links.md %}
