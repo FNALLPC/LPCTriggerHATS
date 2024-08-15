@@ -7,7 +7,7 @@ objectives:
 ---
 
 > ## Prerequisites
-> Set up your machine following instructions in [setup][lesson-setup] first.
+> Set up your machine following instructions in [setup]({{ page.root}}{% link setup.md %}) first.
 {: .prereq}
 ### Find the L1 seed of the MET HLT path
 There are different ways to learn which is the L1 seed of a specific HLT path. Two examples will be tested in this exercise:
