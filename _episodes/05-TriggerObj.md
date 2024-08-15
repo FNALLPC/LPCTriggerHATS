@@ -9,7 +9,7 @@ objectives:
 ---
 
 > ## MiniAOD
-> In the [efficiency measurement Ex.]({{ page.root }}{% link _episodes/04-HLT_efficiency.md% }), we performed a simple efficiency measurement using the `TriggerResults` product in a MiniAOD file and a NanoAOD file.<br>
+> In the [efficiency measurement Ex.]({{ page.root }}{% link _episodes/04-HLT_efficiency.md %}), we performed a simple efficiency measurement using the `TriggerResults` product in a MiniAOD file and a NanoAOD file.<br>
 > Sometimes, we want to know what is the exact object reconstructed and used in the HLT path.<br>
 > This is what `TriggerObjectStandAloneCollection` contains - the actual physics objects reconstructed at the HLT.
 > 
@@ -24,9 +24,9 @@ objectives:
 > process.singleMuTrigAnalyzerMiniAOD.triggerName = cms.untracked.string("HLT_IsoMu24_v2")
 > ~~~
 > {: .language-python}
-> The `SingleMuTrigAnalyzerMiniAOD.cc` analyzer is longer and more complicated than the one in [efficiency measurement Ex.]({{ page.root }}{% link _episodes/04-HLT_efficiency.md% }), and we will discuss it not only in this exercise, but also in two others that follow. So don't worry if some parts look somewhat mysterious first.
+> The `SingleMuTrigAnalyzerMiniAOD.cc` analyzer is longer and more complicated than the one in [efficiency measurement Ex.]({{ page.root }}{% link _episodes/04-HLT_efficiency.md %}), and we will discuss it not only in this exercise, but also in two others that follow. So don't worry if some parts look somewhat mysterious first.
 > 
-> Similarly to [efficiency measurement Ex.]({{ page.root }}{% link _episodes/04-HLT_efficiency.md% }), in line 129 the name of the HLT path (`triggerName_`) is used to retrieve the corresponding index (`triggerIndex`):
+> Similarly to [efficiency measurement Ex.]({{ page.root }}{% link _episodes/04-HLT_efficiency.md %}), in line 129 the name of the HLT path (`triggerName_`) is used to retrieve the corresponding index (`triggerIndex`):
 > ~~~
 > const unsigned int triggerIndex(hltConfig_.triggerIndex(triggerName_));
 > ~~~
