@@ -92,6 +92,7 @@ We will first run this exercise on MiniAOD format, then run it again on NanoAOD.
 > scram b -j 4
 > cd $CMSSW_BASE/src/ShortExerciseTrigger2023/ShortExerciseTrigger/test
 > ~~~
+> {: .language-bash}
 > Copy the skimmed NanoAOD file to your working directory as follows:
 > ~~~
 > xrdcp root://cmseos.fnal.gov//store/user/cmsdas/2023/short_exercises/Trigger/New_NanoAOD_M1000.root .
