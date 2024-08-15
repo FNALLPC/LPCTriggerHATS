@@ -9,7 +9,7 @@ objectives:
 ---
 
 > ## MiniAOD
-> In the [efficiency measurement Ex.][lesson-04-HLT_efficiency], we performed a simple efficiency measurement using the `TriggerResults` product in a MiniAOD file and a NanoAOD file.<br>
+> In the [efficiency measurement Ex.]({% link _episodes/04-HLT_efficiency.md%}), we performed a simple efficiency measurement using the `TriggerResults` product in a MiniAOD file and a NanoAOD file.<br>
 > Sometimes, we want to know what is the exact object reconstructed and used in the HLT path.<br>
 > This is what `TriggerObjectStandAloneCollection` contains - the actual physics objects reconstructed at the HLT.
 > 
@@ -19,14 +19,14 @@ objectives:
 > > The configuration file shows that also this time we are using as input a skimmed MiniAOD file called `skim_dimu20_SingleMuon_2016G_ReReco_180k.root`. In case you are wondering again, this skim has been produced with the configuration `skim_dimu20.py`, requires two offline muons with pt above 20 GeV.
 > {: .objectives}
 > 
-> This time we don't have a signal trigger and a separate reference trigger. Instead, we focus only on one single-muon trigger, namely HLT_IsoMu24:
+> This time we don't have a signal trigger and a separate reference trigger. Instead, we focus only on one single-muon trigger, namely `HLT_IsoMu24`:
 > ~~~
 > process.singleMuTrigAnalyzerMiniAOD.triggerName = cms.untracked.string("HLT_IsoMu24_v2")
 > ~~~
 > {: .language-python}
-> The `SingleMuTrigAnalyzerMiniAOD.cc` analyzer is longer and more complicated than the one in [efficiency measurement Ex.][lesson-04-HLT_efficiency], and we will discuss it not only in this exercise, but also in two others that follow. So don't worry if some parts look somewhat mysterious first.
+> The `SingleMuTrigAnalyzerMiniAOD.cc` analyzer is longer and more complicated than the one in [efficiency measurement Ex.]({% link _episodes/04-HLT_efficiency.md%}), and we will discuss it not only in this exercise, but also in two others that follow. So don't worry if some parts look somewhat mysterious first.
 > 
-> Similarly to [efficiency measurement Ex.][lesson-04-HLT_efficiency], in line 129 the name of the HLT path (`triggerName_`) is used to retrieve the corresponding index (`triggerIndex`):
+> Similarly to [efficiency measurement Ex.]({% link _episodes/04-HLT_efficiency.md%}), in line 129 the name of the HLT path (`triggerName_`) is used to retrieve the corresponding index (`triggerIndex`):
 > ~~~
 > const unsigned int triggerIndex(hltConfig_.triggerIndex(triggerName_));
 > ~~~
