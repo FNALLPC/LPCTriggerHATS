@@ -44,6 +44,7 @@ After retriving from the DB, you can see all the paths.
  * The L1 seed of a HLT path is always the first module (after the `HLTBeginSequence`) starting with the name `hltL1sXXXX`
  * Click on `hltL1sETM50ToETM120`
  * In the right panel, the `L1SeedsLogicalExpression` shows the L1 seeds used by the path.
+
 > ## Checklist
 > You should see the same L1 seeds that you find from OMS.
 {: .checklist}
