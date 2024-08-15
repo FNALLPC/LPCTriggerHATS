@@ -9,7 +9,6 @@ objectives:
 > ## Prerequisites
 > Set up your machine following instructions in [setup][lesson-setup] first.
 {: .prereq}
-
 ### Find the L1 seed of the MET HLT path
 There are different ways to learn which is the L1 seed of a specific HLT path. Two examples will be tested in this exercise:
  * looking into [OMS](https://cmsoms.cern.ch/);
@@ -17,7 +16,6 @@ There are different ways to learn which is the L1 seed of a specific HLT path. T
  * inspecting a HLT configuration.
 
 In the context of this exercise, we will retrieve the information of the `HLT_PFMET170_HBHECleaned_v*` path from OMS for a specific run (`run 284043`) and HLT configuration (`/cdaq/physics/Run2016/25ns15e33/v4.2.3/HLT/V2`).
-
 ### OMS method
 As a first step, connect to [OMS](https://cmsoms.cern.ch/cms/runs/report?cms_run=284043&cms_run_sequence=GLOBAL-RUN) 
  * Click on `"Runs > Triggers > HLT Path Report"`, 
@@ -48,7 +46,6 @@ After retriving from the DB, you can see all the paths.
 > ## Checklist
 > You should see the same L1 seeds that you find from OMS.
 {: .checklist}
-
 ### Inspecting a HLT configuration
 `hltGetConfiguration` is the official command to retrive a HLT configuration from the database.<br>
 > ## Caution
@@ -70,7 +67,7 @@ You should see the expected output below:
 ~~~
 process.HLT_PFMET170_HBHECleaned_v9 = cms.Path(process.HLTBeginSequence+process.hltL1sETM50ToETM120+process.hltPrePFMET170HBHECleaned+process.HLTRecoMETSequence+process.hltMET90+process.HLTHBHENoiseCleanerSequence+process.hltMetClean+process.hltMETClean80+process.HLTAK4PFJetsSequence+process.hltPFMETProducer+process.hltPFMET170+process.HLTEndSequence)
 ~~~
-> ### Questions
+> ## Questions
 > To conclude, answer the following questions:
 >  * Which was the lowest threshold L1 seed active in the L1 menu?
 >  * Which is the lowest threshold L1 seed unprescaled?
