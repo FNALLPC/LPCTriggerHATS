@@ -3,8 +3,6 @@ title: "Measuring trigger efficiencies"
 teaching: 30
 exercises: 0
 objectives:
-- "Learn how to access the trigger information stored in MiniAOD and NanoAOD"
-- "Learn what is trigger objects and how to access them"
 - "Measure trigger efficiency using the tag-and-probe method"
 ---
 
@@ -20,8 +18,16 @@ objectives:
 
 ## Ex 1: Access trigger bits and compute a MET trigger efficiency
 
-We will first run this exercise on MiniAOD format, then run it again on NanoAOD.
+In exercise 1 we performed a simple trigger efficiency measurement for a MET trigger (signal trigger) with the help of a second, unbiased trigger (reference trigger). 
+Now we will present another common method: the tag-and-probe method, which we use to estimate the trigger efficiency of our single-muon trigger HLT\_IsoMu24.
 
+The tag-and-probe method is based on the fact that the properties of two objects, in our case the two muons, are independent of each other. Therefore the probability 
+that one muon causes the trigger to fire does not depend on the probability that the other muon makes the trigger fire.
+
+The "tag" muon is required to be matched to a trigger-level muon object. This means that presence of this tag muon in the event alone is enough to fire the trigger. Then 
+we search for another offline muon, a "probe", and ask: if the tag muon would not have been there, could this "probe" muon have fired the trigger anyway?
+
+In the code, this is done in lines 277-283 of plugins/SingleMuTrigAnalyzerMiniAOD.cc, where we check if the probe muon is matched to a trigger-level muon object:
 > ## MiniAOD
 > The MINIAOD format was introduced at the beginning of Run 2 to reduce the information and file size from the AOD file format. 
 > For Run 2 analyses, most of the analysis groups at CMS skimmed the centrally produced MiniAOD files into smaller, analysis-specific ROOT Ntuples. 
