@@ -5,6 +5,7 @@ exercises: 10
 objectives:
 - "Learn different ways to look up information about a trigger path"
 ---
+
 > ## Prerequisites
 > Set up your machine following instructions in [setup][lesson-setup] first.
 {: .prereq}
@@ -28,7 +29,7 @@ Then move to the L1 Trigger rate page in OMS and search for the L1 seeds there t
 ### Web-based confdb
 The [web-based confdb](https://hlt-config-editor-confdbv3.app.cern.ch/) is a web-based GUI of the database that holds all of CMS HLT configurations.<br>
 One can **inspect** any given HLT menu without downloading one or connecting to the database.<br>
-More information about the web-based confdb can be found in these [slides](https://indico.cern.ch/event/1230321/contributions/5177149/attachments/2580137/4450016/webbased%20confdb.pdf)
+More information about the web-based confdb can be found in these [slides](https://indico.cern.ch/event/1230321/contributions/5177149/attachments/2580137/4450016/webbased%20confdb.pdf).
 
 Let's try to find the `/cdaq/physics/Run2016/25ns15e33/v4.2.3/HLT/V2` menu in the GUI.
  * Connect to [https://hlt-config-editor-confdbv3.app.cern.ch/](https://hlt-config-editor-confdbv3.app.cern.ch/)
@@ -43,13 +44,14 @@ After retriving from the DB, you can see all the paths.
  * The L1 seed of a HLT path is always the first module (after the `HLTBeginSequence`) starting with the name `hltL1sXXXX`
  * Click on `hltL1sETM50ToETM120`
  * In the right panel, the `L1SeedsLogicalExpression` shows the L1 seeds used by the path.
-
+> ## Checklist
 > You should see the same L1 seeds that you find from OMS.
 {: .checklist}
 
 ### Inspecting a HLT configuration
 `hltGetConfiguration` is the official command to retrive a HLT configuration from the database.<br>
-> Since this involves connecting to the confdb database directly, this command should never be used in a large number of jobs or programatic loop. It should only be used interactively.
+> ## Caution
+> Since `hltGetConfiguration` involves connecting to the confdb database directly, this command should never be used in a large number of jobs or programatic loop. **It should only be used interactively.**
 {: .caution}
 ~~~
 ssh -f -N -D 1080 <yourUserName>@lxplus.cern.ch 
@@ -59,7 +61,7 @@ If you have connection issue, simply inspect one that has been downloaded for yo
 ~~~
 xrdcp root://cmseos.fnal.gov//store/user/cmsdas/2023/short_exercises/Trigger/dump_hlt_online_2016G.py .
 ~~~
-Then, inspect the HLT configuration dump_hlt_online_2016G.py to look for the information about the L1 seed of the path into it:
+Then, inspect the HLT configuration `dump_hlt_online_2016G.py` to look for the information about the L1 seed of the path into it:
 ~~~
 grep 'process.HLT_PFMET170_HBHECleaned_v9' dump_hlt_online_2016G.py
 ~~~
@@ -67,12 +69,10 @@ You should see the expected output below:
 ~~~
 process.HLT_PFMET170_HBHECleaned_v9 = cms.Path(process.HLTBeginSequence+process.hltL1sETM50ToETM120+process.hltPrePFMET170HBHECleaned+process.HLTRecoMETSequence+process.hltMET90+process.HLTHBHENoiseCleanerSequence+process.hltMetClean+process.hltMETClean80+process.HLTAK4PFJetsSequence+process.hltPFMETProducer+process.hltPFMET170+process.HLTEndSequence)
 ~~~
-
 > ### Questions
 > To conclude, answer the following questions:
-> 
-> Which was the lowest threshold L1 seed active in the L1 menu?
-> Which is the lowest threshold L1 seed unprescaled?
-> How is it called the HLT module that contains the information about the L1 seeding?
+>  * Which was the lowest threshold L1 seed active in the L1 menu?
+>  * Which is the lowest threshold L1 seed unprescaled?
+>  * How is it called the HLT module that contains the information about the L1 seeding?
 {: .challenge}
 
