@@ -9,7 +9,6 @@ objectives:
 ---
 
 ## Match trigger objects to offline objects
-
 Trigger objects are physics objects(electrons,muons,jets,MET..etc) reconstructed at HLT and are used for making HLT decisions of each HLT path.
 Offline objects are reconstructed offline, which in general has more precise reconstructions.
 If we want to know whether an offline object(e.g. a muon) is responsible for firing the HLT, we can look for a trigger muon within a certain `dR` of the offline muon.
@@ -22,6 +21,7 @@ Here we are not interested in primary vertices per se, we just need to get them 
 
 ### Matcing by momentum direction `dR`
 
+> ## Question
 > Take a look at lines 231-286 in SingleMuTrigAnalyzerMiniAOD.cc, where you can find two for loops that iterate over the offline muons.
 {: .callout}
 
@@ -39,6 +39,7 @@ For tag muons, the matching code looks like this:
       if (ROOT::Math::VectorUtil::DeltaR(muon_tag->p4(),trigMuons.at(itrig)) < dr_trigmatch) trigmatch_tag = true;
    }
 ~~~
+{: .language-cpp}
 Since reconstruction of muon trajectory is less precise in HLT than in offline reconstruction, there might be a small difference between the directions of the trigger muon and the offline muon, even if they correspond to the same original real muon. 
 Therefore a DeltaR cone of 0.2 is used to geometrically match the trigger object and the offline object (`dr_trigmatch = 0.2`).
 
@@ -50,8 +51,10 @@ Finally, if the two muons pass the selections in the code, and the tag muon pass
      if (dimuon.M() < 81. || dimuon.M() > 101.) continue;
      hists_1d_["h_mll_cut"]->Fill(dimuon.M());
 ~~~
+{: .language-cpp}
 
 > Use the `TBrowser` to open the file `histos_SingleMuTrigAnalyzer.root` and have a look at the histogram `h_mll_allpairs`, which shows the dimuon invariant mass distribution of muon pairs that passed the selections. 
+> ## Question
 > Can you explain the shape of the distribution?
 {: .challenge}
 
