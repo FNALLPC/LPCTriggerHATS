@@ -1,18 +1,20 @@
 ---
 title: Setup
 ---
+The following instructions assume you are using Bash. To switch to Bash, use `bash --login`.
 
 ## Setup the work area
 Set up the CMSSW environment and clone the repository from github for the trigger exercise:
 
 ~~~    
-source /cvmfs/cms.cern.ch/cmsset_default.csh
-setenv SCRAM_ARCH slc7_amd64_gcc700
 cd nobackup/
+mkdir HATS2024 
+cd HATS2024
+cmssw-el7 -p --bind `readlink $HOME` --bind `readlink -f ${HOME}/nobackup/` --bind /uscms_data --bind /cvmfs -- /bin/bash -l
 cmsrel CMSSW_10_6_31_patch1
 cd CMSSW_10_6_31_patch1/src
 cmsenv
-git clone -b 2024 https://github.com/kakwok/LPCTriggerHATS.git
+git clone -b 2024 https://github.com/FNALLPC/LPCTriggerHATS.git
 scram b -j 4
 ~~~
 {: .language-bash}
