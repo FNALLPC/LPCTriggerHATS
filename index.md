@@ -11,7 +11,7 @@ FIXME: home page introduction
 
 > ## Links
 > * [Trigger HATS@LPC 2024](https://indico.cern.ch/event/1443889/)
-> * [LPCTriggerHATS github repo](https://github.com/kakwok/LPCTriggerHATS)
+> * [LPCTriggerHATS github repo](https://github.com/FNALLPC/LPCTriggerHATS)
 > * [Twiki page(old)](https://twiki.cern.ch/twiki/bin/viewauth/CMS/SWGuideCMSDataAnalysisSchoolLPC2023TriggerExercise)
 > * [HATS introductory slides 2024](https://indico.cern.ch/event/1443871/attachments/2906926/5099492/General%20HATS@LPC%202024%20Introductory%20Remarks.pdf)
 {: .callout}
