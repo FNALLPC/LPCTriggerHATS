@@ -28,7 +28,7 @@ A CERN account with access to lxplus - that's it!
     python3 submit.py /dev/CMSSW_14_0_0/GRun/V173 --cmssw CMSSW_14_0_11 --tag YOUR_TAG_HERE
     ```
 
-    There is a possibility to require ```pip3 install tsgauth==0.10.2``` in LXPLUS9. Which can be fixed using the lines bellow.
+    If you have 2FA, there is a possibility that lxplus9 will require ```pip3 install tsgauth==0.10.2```. Which can be fixed using the lines bellow.
    
     ```bash
     python3 -m venv venv
@@ -37,7 +37,7 @@ A CERN account with access to lxplus - that's it!
     pip3 install tsgauth==0.10.2
     ```
 
-    If you have 2FA, the code will give you a link (like ```https://auth.cern.ch/auth/realms/cern/...```) which should be copy and pasted in the browser to grant access.
+    The lxplus9 also will give you a link (like ```https://auth.cern.ch/auth/realms/cern/...```) which should be copy and pasted in the browser to grant access.
 
 3. Check the status of your job using the `job_manager.py` script.
 
