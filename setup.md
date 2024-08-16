@@ -5,8 +5,21 @@ title: Setup
 ## Setup the work area
 The following instructions assume you are using Bash. To switch to Bash, use `bash --login`.
 
-Set up the CMSSW environment and clone the repository from github for the trigger exercise:
+Set up the CMSSW environment and clone the repository from github for the trigger exercise (lxplus):
+~~~    
+cd public/
+mkdir HATS2024 
+cd HATS2024
+cmssw-el7
+cmsrel CMSSW_10_6_31_patch1
+cd CMSSW_10_6_31_patch1/src
+cmsenv
+git clone -b 2024 https://github.com/FNALLPC/LPCTriggerHATS.git
+scram b -j 4
+~~~
+{: .language-bash}
 
+Alternatively if workig on Fermilab LPC:
 ~~~    
 cd nobackup/
 mkdir HATS2024 
