@@ -90,7 +90,7 @@ We will first run this exercise on MiniAOD format, then run it again on NanoAOD.
 > git clone https://github.com/cms-nanoAOD/nanoAOD-tools.git PhysicsTools/NanoAODTools
 > cd PhysicsTools/NanoAODTools
 > scram b -j 4
-> cd $CMSSW_BASE/src/ShortExerciseTrigger2023/ShortExerciseTrigger/test
+> cd $CMSSW_BASE/src/LPCTriggerHATS/ShortExerciseTrigger/test
 > ~~~
 > {: .language-bash}
 > Copy the skimmed NanoAOD file to your working directory as follows:

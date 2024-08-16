@@ -54,7 +54,7 @@ objectives:
 > 
 > Run the configuration file as follows:
 > ~~~
-> cd $CMSSW_BASE/src/ShortExerciseTrigger2023/ShortExerciseTrigger/test
+> cd $CMSSW_BASE/src/LPCTriggerHATS/ShortExerciseTrigger/test
 > cmsRun ana_SingleMuMiniAOD.py 
 > ~~~
 > {: .language-bash}
