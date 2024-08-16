@@ -50,7 +50,7 @@ In case the file does already contain the following lines, add:
 {: .source}
 
 When you log into cmslpc, add a `-L` option to your ssh command:
-###
+~~~
     ssh -L localhost:8888:localhost:8888 <YOUR USERNAME>@cmslpc-el9.fnal.gov
 ~~~
 {: .source}
