@@ -1,9 +1,10 @@
 ---
 title: Setup
 ---
-The following instructions assume you are using Bash. To switch to Bash, use `bash --login`.
 
 ## Setup the work area
+The following instructions assume you are using Bash. To switch to Bash, use `bash --login`.
+
 Set up the CMSSW environment and clone the repository from github for the trigger exercise:
 
 ~~~    
