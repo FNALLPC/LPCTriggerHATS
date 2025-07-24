@@ -12,7 +12,7 @@
  */
 
 #include "FWCore/Framework/interface/Event.h"
-#include "FWCore/Framework/interface/one/EDAnalyzer.h"
+#include "FWCore/Framework/interface/EDAnalyzer.h"
 #include "FWCore/ParameterSet/interface/ParameterSet.h"
 #include "HLTrigger/HLTcore/interface/HLTConfigProvider.h"
 #include "DataFormats/Common/interface/TriggerResults.h"
@@ -31,7 +31,7 @@
 //
 // class declaration
 //
-class SingleMuTrigAnalyzerMiniAOD : public edm::one::EDAnalyzer<edm::one::SharedResources> {
+class SingleMuTrigAnalyzerMiniAOD : public edm::EDAnalyzer {
   
   typedef math::XYZTLorentzVectorF LorentzVector;
 
