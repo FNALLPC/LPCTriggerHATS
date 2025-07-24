@@ -12,7 +12,7 @@
  */
 
 #include "FWCore/Framework/interface/Event.h"
-#include "FWCore/Framework/interface/EDAnalyzer.h"
+#include "FWCore/Framework/interface/one/EDAnalyzer.h"
 #include "FWCore/ParameterSet/interface/ParameterSet.h"
 #include "HLTrigger/HLTcore/interface/HLTConfigProvider.h"
 #include "DataFormats/Common/interface/TriggerResults.h"
@@ -30,7 +30,7 @@
 //
 // class declaration
 //
-class METTrigAnalyzerMiniAOD : public edm::EDAnalyzer {
+class METTrigAnalyzerMiniAOD : public edm::one::EDAnalyzer<edm::one::SharedResources>{
   
   typedef math::XYZTLorentzVectorF LorentzVector;
 
